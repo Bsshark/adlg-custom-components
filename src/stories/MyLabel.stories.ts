@@ -12,8 +12,8 @@ const meta = {
 		size: {
 			control: "inline-radio",
 		},
-        color: { control: 'color' },
-        fontColor: { control: 'color' }
+		color: { control: "color" },
+		fontColor: { control: "color" },
 	},
 } satisfies Meta<typeof MyLabel>;
 
@@ -28,20 +28,27 @@ export const Basic: Story = {
 export const AllCaps: Story = {
 	args: {
 		label: "All Caps label",
-        size: 'Normal',
-        allCaps: true
+		size: "Normal",
+		allCaps: true,
 	},
 };
 export const Secondary: Story = {
 	args: {
 		label: "Secondary label",
-        color: "text-secondary",
-        fontColor: ""
+		color: "text-secondary",
+		fontColor: "",
 	},
 };
 export const CustomColor: Story = {
 	args: {
 		label: "Custom Color label",
-        fontColor: "green"
+		fontColor: "green",
+	},
+};
+export const CustomBackgroundColor: Story = {
+	args: {
+		label: "Custom BG Color",
+		fontColor: "white",
+		backgroundColor: "black",
 	},
 };
