@@ -1,8 +1,10 @@
 {
 	"name": "adlg-custom-components",
 	"private": false,
-	"version": "0.0.1",
+	"version": "0.0.1-rc2",
 	"type": "module",
+	"main": "dist/index.js",
+	"typings": "dist/index.d.ts",
 	"keywords": [
 		"react",
 		"development",
@@ -29,17 +31,16 @@
 	},
 	"scripts": {
 		"dev": "npm run storybook",
-		"build": "tsc",
+		"build": "npm run clean && tsc && npm run copyfiles",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"chromatic": "npx chromatic --project-token=chpt_911e3ec75956a27"
+		"chromatic": "npx chromatic --project-token=chpt_911e3ec75956a27",
+		"clean": "rimraf dist/",
+		"copyfiles": "copyfiles -u 1 src/**/*.css dist/"
 	},
-	"dependencies": {},
 	"devDependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
 		"@storybook/addon-essentials": "^7.6.4",
 		"@storybook/addon-interactions": "^7.6.4",
 		"@storybook/addon-links": "^7.6.4",
@@ -58,6 +59,9 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-react-refresh": "^0.4.4",
 		"eslint-plugin-storybook": "^0.6.15",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"rimraf": "^5.0.5",
 		"storybook": "^7.6.4",
 		"typescript": "^5.2.2",
 		"vite": "^5.0.0"
